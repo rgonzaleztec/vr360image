@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VRROOM360.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AcercaDe.unity
+    guid: 7bd21e2f812fc06498f6c8f43bd93557
+  - enabled: 1
+    path: Assets/Scenes/Patio.unity
+    guid: 81d822db183856a408869e8fd7868c3d
+  - enabled: 1
+    path: Assets/Scenes/LoaderScene.unity
+    guid: f613c29220b9a884e971a7e8cf91412f
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c774e2814d98a9b4ba92cdb39c6d4fec,
       type: 2}

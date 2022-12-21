@@ -13,21 +13,15 @@ public class manejoMenu : MonoBehaviour
         _myRenderer = GetComponent<Renderer>();
     }
 
-    public void OnPointerEnter()
-    { 
-        
-    }
-
-    public void OnPointerExit()
-    {
-
-    }
-
     public void CargarVRROOM()
     {
         SceneManager.LoadScene(1);
     }
 
+    public void CargarPatio()
+    {
+        SceneManager.LoadScene(3);
+    }
     public void CargarAcercaDe()
     {
         SceneManager.LoadScene(2); // Carga escena de acerca de

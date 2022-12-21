@@ -6,9 +6,9 @@ public class CameraPointerManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject pointer;
-    [SerializeField] private float maxDistancePointer = 4.5f;
+    [SerializeField] float maxDistancePointer = 2.5f;
     [Range(0, 1)]
-    [SerializeField] private float disPointerObject = 0.95f;
+    [SerializeField] float disPointerObject = 0.95f;
 
 
 
@@ -26,10 +26,12 @@ public class CameraPointerManager : MonoBehaviour
 
     private void GazeSelection()
     {
-        if (_gazedAtObject.name == "Sonido")
-             _gazedAtObject?.SendMessage("EncenderAudio", null, SendMessageOptions.DontRequireReceiver);
+        if (_gazedAtObject.name == "Patio")
+            _gazedAtObject?.SendMessage("CargarPatio", null, SendMessageOptions.DontRequireReceiver);
         if (_gazedAtObject.name == "EscenaVR360")
             _gazedAtObject?.SendMessage("CargarVRROOM", null, SendMessageOptions.DontRequireReceiver);
+        if (_gazedAtObject.name == "Sonido")
+            _gazedAtObject?.SendMessage("EncenderAudio", null, SendMessageOptions.DontRequireReceiver);
         if (_gazedAtObject.name == "AcercaDe")
             _gazedAtObject?.SendMessage("CargarAcercaDe", null, SendMessageOptions.DontRequireReceiver);
         if (_gazedAtObject.name == "Fin")
@@ -43,8 +45,6 @@ public class CameraPointerManager : MonoBehaviour
     {
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
-
-
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
@@ -73,11 +73,7 @@ public class CameraPointerManager : MonoBehaviour
             _gazedAtObject = null;
         }
 
-        // Checks for screen touches.
-      /*  if (Google.XR.Cardboard.Api.IsTriggerPressed)
-        {
-            _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
-        }*/
+     
     }
 
     private void PointerOnGaze(Vector3 hitPoint)
